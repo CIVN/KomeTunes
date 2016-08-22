@@ -3,6 +3,8 @@ using System.Data;
 using System.Linq;
 using System.Windows.Forms;
 using iTunesLib;
+using static KomeTunes.Enums;
+using System.Diagnostics;
 
 namespace KomeTunes
 {
@@ -10,7 +12,7 @@ namespace KomeTunes
 	{
 		private iTunesApp app;
 		private ChangeList changeList;
-		private int row = 0;
+		private int row;
 
 		public Form1()
 		{
@@ -77,22 +79,22 @@ namespace KomeTunes
 
 			if (e.ColumnIndex == 0)
 			{
-				changeList.Add(tag, ChangeList.DataKind.Name, cell.Value);
+				changeList.Add(tag, DataKind.Name, cell.Value);
 			}
 
 			else if (e.ColumnIndex == 1)
 			{
-				changeList.Add(tag, ChangeList.DataKind.Artist, cell.Value);
+				changeList.Add(tag, DataKind.Artist, cell.Value);
 			}
 
 			else if (e.ColumnIndex == 2)
 			{
-				changeList.Add(tag, ChangeList.DataKind.Album, cell.Value);
+				changeList.Add(tag, DataKind.Album, cell.Value);
 			}
 
 			else if (e.ColumnIndex == 3)
 			{
-				changeList.Add(tag, ChangeList.DataKind.Genre, cell.Value);
+				changeList.Add(tag, DataKind.Genre, cell.Value);
 			}
 
 			else if (e.ColumnIndex == 4)
@@ -111,7 +113,7 @@ namespace KomeTunes
 					return;
 				}
 
-				changeList.Add(tag, ChangeList.DataKind.Rating, int.Parse(cell.Value.ToString()) * 20);
+				changeList.Add(tag, DataKind.Rating, int.Parse(cell.Value.ToString()) * 20);
 			}
 
 			else if (e.ColumnIndex == 5)
@@ -124,12 +126,12 @@ namespace KomeTunes
 					return;
 				}
 
-				changeList.Add(tag, ChangeList.DataKind.PlayedCount, int.Parse(cell.Value.ToString()));
+				changeList.Add(tag, DataKind.PlayedCount, int.Parse(cell.Value.ToString()));
 			}
 
 			else if (e.ColumnIndex == 6)
 			{
-				changeList.Add(tag, ChangeList.DataKind.Comment, cell.Value);
+				changeList.Add(tag, DataKind.Comment, cell.Value);
 			}
 		}
 
@@ -141,6 +143,18 @@ namespace KomeTunes
 			{
 				Reflesh();
 			}
+		}
+
+		private void ウェブで検索ToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			if (dataGridView1.SelectedCells[0].Value == null)
+			{
+				return;
+			}
+
+			var selected = dataGridView1.SelectedCells[0].Value.ToString();
+
+			Process.Start("https://www.google.co.jp/#q=" + selected);
 		}
 	}
 }

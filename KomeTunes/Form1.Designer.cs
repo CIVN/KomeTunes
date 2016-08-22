@@ -30,6 +30,9 @@
 		{
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
 			this.dataGridView1 = new System.Windows.Forms.DataGridView();
+			this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+			this.更新ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.変更を適用ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this._Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Artist = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Album = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -37,9 +40,7 @@
 			this.Rating = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.PlayedCount = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Comment = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-			this.更新ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.変更を適用ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.ウェブで検索ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
 			this.menuStrip1.SuspendLayout();
 			this.SuspendLayout();
@@ -66,50 +67,12 @@
 			this.dataGridView1.TabIndex = 0;
 			this.dataGridView1.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellValueChanged);
 			// 
-			// _Name
-			// 
-			this._Name.HeaderText = "Name";
-			this._Name.Name = "_Name";
-			this._Name.Width = 200;
-			// 
-			// Artist
-			// 
-			this.Artist.HeaderText = "Artist";
-			this.Artist.Name = "Artist";
-			this.Artist.Width = 150;
-			// 
-			// Album
-			// 
-			this.Album.HeaderText = "Album";
-			this.Album.Name = "Album";
-			this.Album.Width = 150;
-			// 
-			// Genre
-			// 
-			this.Genre.HeaderText = "Genre";
-			this.Genre.Name = "Genre";
-			// 
-			// Rating
-			// 
-			this.Rating.HeaderText = "Rating";
-			this.Rating.Name = "Rating";
-			// 
-			// PlayedCount
-			// 
-			this.PlayedCount.HeaderText = "PlayedCount";
-			this.PlayedCount.Name = "PlayedCount";
-			// 
-			// Comment
-			// 
-			this.Comment.HeaderText = "Comment";
-			this.Comment.Name = "Comment";
-			this.Comment.Width = 200;
-			// 
 			// menuStrip1
 			// 
 			this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.更新ToolStripMenuItem,
-            this.変更を適用ToolStripMenuItem});
+            this.変更を適用ToolStripMenuItem,
+            this.ウェブで検索ToolStripMenuItem});
 			this.menuStrip1.Location = new System.Drawing.Point(0, 0);
 			this.menuStrip1.Name = "menuStrip1";
 			this.menuStrip1.Size = new System.Drawing.Size(1264, 24);
@@ -129,6 +92,52 @@
 			this.変更を適用ToolStripMenuItem.Size = new System.Drawing.Size(81, 20);
 			this.変更を適用ToolStripMenuItem.Text = "変更を適用";
 			this.変更を適用ToolStripMenuItem.Click += new System.EventHandler(this.変更を適用ToolStripMenuItem_Click);
+			// 
+			// _Name
+			// 
+			this._Name.HeaderText = "曲名";
+			this._Name.Name = "_Name";
+			this._Name.Width = 200;
+			// 
+			// Artist
+			// 
+			this.Artist.HeaderText = "アーティスト名";
+			this.Artist.Name = "Artist";
+			this.Artist.Width = 150;
+			// 
+			// Album
+			// 
+			this.Album.HeaderText = "アルバム";
+			this.Album.Name = "Album";
+			this.Album.Width = 150;
+			// 
+			// Genre
+			// 
+			this.Genre.HeaderText = "ジャンル";
+			this.Genre.Name = "Genre";
+			// 
+			// Rating
+			// 
+			this.Rating.HeaderText = "レート";
+			this.Rating.Name = "Rating";
+			// 
+			// PlayedCount
+			// 
+			this.PlayedCount.HeaderText = "再生回数";
+			this.PlayedCount.Name = "PlayedCount";
+			// 
+			// Comment
+			// 
+			this.Comment.HeaderText = "コメント";
+			this.Comment.Name = "Comment";
+			this.Comment.Width = 200;
+			// 
+			// ウェブで検索ToolStripMenuItem
+			// 
+			this.ウェブで検索ToolStripMenuItem.Name = "ウェブで検索ToolStripMenuItem";
+			this.ウェブで検索ToolStripMenuItem.Size = new System.Drawing.Size(84, 20);
+			this.ウェブで検索ToolStripMenuItem.Text = "ウェブで検索";
+			this.ウェブで検索ToolStripMenuItem.Click += new System.EventHandler(this.ウェブで検索ToolStripMenuItem_Click);
 			// 
 			// Form1
 			// 
@@ -156,6 +165,9 @@
 		#endregion
 
 		private System.Windows.Forms.DataGridView dataGridView1;
+		private System.Windows.Forms.MenuStrip menuStrip1;
+		private System.Windows.Forms.ToolStripMenuItem 変更を適用ToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem 更新ToolStripMenuItem;
 		private System.Windows.Forms.DataGridViewTextBoxColumn _Name;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Artist;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Album;
@@ -163,9 +175,7 @@
 		private System.Windows.Forms.DataGridViewTextBoxColumn Rating;
 		private System.Windows.Forms.DataGridViewTextBoxColumn PlayedCount;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Comment;
-		private System.Windows.Forms.MenuStrip menuStrip1;
-		private System.Windows.Forms.ToolStripMenuItem 変更を適用ToolStripMenuItem;
-		private System.Windows.Forms.ToolStripMenuItem 更新ToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem ウェブで検索ToolStripMenuItem;
 	}
 }
 

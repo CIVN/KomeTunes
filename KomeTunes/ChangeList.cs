@@ -1,5 +1,6 @@
 ﻿using iTunesLib;
 using System.Collections.Generic;
+using static KomeTunes.Enums;
 
 namespace KomeTunes
 {
@@ -51,17 +52,6 @@ namespace KomeTunes
 						break;
 				}
 			}
-		}
-
-		public enum DataKind
-		{
-			Name,
-			Artist,
-			Album,
-			Genre,
-			Rating,
-			PlayedCount,
-			Comment
 		}
 	}
 }
