@@ -13,6 +13,11 @@ namespace KomeTunes
 			changeList.Add(new object[] { track, kind, value });
 		}
 
+		public void Reset()
+		{
+			changeList.Clear();
+		}
+
 		public void Apply()
 		{
 			foreach(var cl in changeList)
@@ -20,6 +25,11 @@ namespace KomeTunes
 				var track = (IITTrack)cl[0];
 				var kind = (DataKind)cl[1];
 				var value = cl[2];
+
+				if (value == null)
+				{
+					value = "";
+				}
 				
 				switch (kind)
 				{
@@ -27,8 +37,16 @@ namespace KomeTunes
 						track.Name = value.ToString();
 						break;
 
+					case DataKind.EQ:
+						track.EQ = value.ToString();
+						break;
+
 					case DataKind.Artist:
 						track.Artist = value.ToString();
+						break;
+
+					case DataKind.Composer:
+						track.Composer = value.ToString();
 						break;
 
 					case DataKind.Album:

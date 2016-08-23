@@ -1,11 +1,13 @@
 ﻿namespace KomeTunes
 {
-	class Enums
+	public class Enums
 	{
 		public enum DataKind
 		{
 			Name,
+			EQ,
 			Artist,
+			Composer,
 			Album,
 			Genre,
 			Rating,
